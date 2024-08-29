@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Fluxograma</title>
+    <style>
+        body {
+            background-color: #1D4221;
+            color: white;
+            font-family: "Bai Jamjuree", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .passo {
+            display: none;
+        }
+        .ativo {
+            display: block;
+        }
+        button {
+            background-color: #64A712;
+            color: white;
+            font-family: "Bai Jamjuree", sans-serif;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <p>Qual o seu mestre?</p>
+            <button class="btn-proximo" data-proximo="1">Satoru Gojo</button>
+            <button class="btn-proximo" data-proximo="2">Yuta Okkotsu</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <p>Você encontra um grupo de alunos treinando. O que faz?</p>
+            <button class="btn-proximo" data-proximo="3">Juntar-se ao treinamento</button>
+            <button class="btn-proximo" data-proximo="4">Ignorar o treinamento e explorar a escola</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <p>Você encontra Yuta treinando sozinho. O que faz?</p>
+            <button class="btn-proximo" data-proximo="5">Oferecer ajuda no treinamento</button>
+            <button class="btn-proximo" data-proximo="6">Perguntar sobre missões</button>
+        </div>
+        <div class="passo" id="passo-3">
+            <p>Após o treinamento ou missão, você ouve rumores sobre uma maldição próxima. O que faz?</p>
+            <button class="btn-proximo" data-proximo="7">Investigar a maldição imediatamente</button>
+            <button class="btn-proximo" data-proximo="8">Ignorar a maldição e continuar com suas atividades</button>
+        </div>
+        <div class="passo" id="passo-4">
+            <p>Você encontra uma pista sobre uma missão secreta. O que faz?</p>
+            <button class="btn-proximo" data-proximo="7">Investigar a maldição imediatamente</button>
+            <button class="btn-proximo" data-proximo="8">Ignorar a maldição e continuar com suas atividades</button>
+        </div>
+        <div class="passo" id="passo-5">
+            <p>Yuta ensina uma técnica avançada e você ganha um bônus. O que faz a seguir?</p>
+            <button class="btn-proximo" data-proximo="7">Investigar a maldição imediatamente</button>
+            <button class="btn-proximo" data-proximo="8">Ignorar a maldição e continuar com suas atividades</button>
+        </div>
+        <div class="passo" id="passo-6">
+            <p>Yuta lhe dá uma missão importante para completar. O que faz?</p>
+            <button class="btn-proximo" data-proximo="7">Investigar a maldição imediatamente</button>
+            <button class="btn-proximo" data-proximo="8">Ignorar a maldição e continuar com suas atividades</button>
+        </div>
+        <div class="passo" id="passo-7">
+            <p>Você encontra a maldição e enfrenta um desafio. O que faz?</p>
+            <button class="btn-proximo" data-proximo="9">Lutar contra a maldição</button>
+            <button class="btn-proximo" data-proximo="10">Tentar evitar a maldição e buscar ajuda</button>
+        </div>
+        <div class="passo" id="passo-8">
+            <p>Você ignora a maldição e continua suas atividades. O que faz com a mensagem misteriosa sobre uma ameaça iminente?</p>
+            <button class="btn-proximo" data-proximo="11">Investigar a mensagem</button>
+            <button class="btn-proximo" data-proximo="12">Ignorar a mensagem</button>
+        </div>
+        <div class="passo" id="passo-9">
+            <p>Se vencer a luta contra a maldição: Você ganha experiência e um item raro. O que faz a seguir?</p>
+            <button class="btn-proximo" data-proximo="13">Reportar-se ao seu mestre</button>
+            <button class="btn-proximo" data-proximo="14">Explorar a escola e procurar novas oportunidades</button>
+        </div>
+        <div class="passo" id="passo-10">
+            <p>Se perder na luta contra a maldição: Você precisa se recuperar e tentar novamente.</p>
+            <button class="btn-proximo" data-proximo="7">Voltar e lutar contra a maldição novamente</button>
+        </div>
+        <div class="passo" id="passo-11">
+            <p>Você descobre uma nova ameaça e precisa se preparar. O que faz?</p>
+            <button class="btn-proximo" data-proximo="15">Preparar-se para a ameaça</button>
+            <button class="btn-proximo" data-proximo="16">Ignorar a mensagem e focar em outra missão</button>
+        </div>
+        <div class="passo" id="passo-12">
+            <p>Você continua suas atividades sem mudanças, mas a ameaça pode se intensificar.</p>
+            <button class="btn-proximo" data-proximo="13">Reportar-se ao seu mestre</button>
+            <button class="btn-proximo" data-proximo="14">Explorar a escola e procurar novas oportunidades</button>
+        </div>
+        <div class="passo" id="passo-13">
+            <p>Seu mestre avalia seu desempenho e pode oferecer uma nova missão ou recompensa. Fim do jogo.</p>
+        </div>
+        <div class="passo" id="passo-14">
+            <p>Você encontra novos desafios ou aliados que podem influenciar suas próximas missões. Fim do jogo.</p>
+        </div>
+        <div class="passo" id="passo-15">
+            <p>Você coleta recursos e se fortalece para o confronto. Fim do jogo.</p>
+        </div>
+        <div class="passo" id="passo-16">
+            <p>Você ganha outros benefícios de missões alternativas. Fim do jogo.</p>
+        </div>
+    </main>
+
+    <script>
+        const avanca = document.querySelectorAll('.btn-proximo');
+
+        avanca.forEach(button => {
+            button.addEventListener('click', function(){
+                const atual = document.querySelector('.ativo');
+                const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
+
+                atual.classList.remove('ativo');
+                document.getElementById(proximoPasso).classList.add('ativo');
+            });
+        });
+    </script>
+</body>
+</html>
